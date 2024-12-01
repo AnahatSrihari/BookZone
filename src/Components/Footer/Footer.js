@@ -1,49 +1,41 @@
-import React from 'react'
-import "./Footer.css"
-import { Link } from "react-router-dom"
+import React from 'react';
+import './Footer.css';
+import { Link } from 'react-router-dom';
+import footerLogo from '../../Assets/Images/bookzone-white-logo.png';
 
 function Footer() {
     return (
-        <div className='footer-container'>
-            <ul className='footer-list'>
-                <li><h2>ABOUT</h2></li>
-                <li><p>Contact us</p></li>
-                <li><p>About us</p></li>
-                <li><p>Careers</p></li>
-                <li><p>Gift Cards</p></li>
-            </ul>
-            <ul className='footer-list'>
-                <li><h2>HELP</h2></li>
-                <li><p>Payments</p></li>
-                <li><p>Shipping</p></li>
-                <li><p>Cancellation & Returns</p></li>
-                <li><p>FAQs</p></li>
-            </ul>
-            <ul className='footer-list'>
-                <li><h2>SOCIALS</h2></li>
-                <li>
-                    <a href="https://www.linkedin.com/in/naman-saxena-5460b3188/" rel="noreferrer" target="_blank">
-                        <p>Linkedin</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/Naman-Saxena1" rel="noreferrer" target="_blank">
-                        <p>Github</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/NamanSa83962307?s=08" rel="noreferrer" target="_blank">
-                        <p>Twitter</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/naman_saxena98/" rel="noreferrer" target="_blank">
-                        <p>Instagram</p>
-                    </a>
-                </li>
-            </ul>
+        <div className='footer'>
+            <div className='footer-content'>
+                <div className='footer-brand'>
+                    <img src={footerLogo} alt="BookZone" className="footer-logo" />
+                </div>
+                <div className='footer-links'>
+                    <div className="footer-about">
+                        <h3>ABOUT</h3>
+                        <ul>
+                            <li><Link to="/contact">Contact us</Link></li>
+                            <li><Link to="/about">About us</Link></li>
+                            <li><Link to="/careers">Careers</Link></li>
+                            <li><Link to="/gift-cards">Gift Cards</Link></li>
+                        </ul>
+                    </div>
+                    <div className="footer-help">
+                        <h3>HELP</h3>
+                        <ul>
+                            <li><Link to="/payments">Payments</Link></li>
+                            <li><Link to="/shipping">Shipping</Link></li>
+                            <li><Link to="/cancellation-returns">Cancellation & Returns</Link></li>
+                            <li><Link to="/faqs">FAQs</Link></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className="footer-bottom">
+                <p> BookZone All Rights Reserved</p>
+            </div>
         </div>
-    )
+    );
 }
 
-export { Footer } 
+export { Footer };

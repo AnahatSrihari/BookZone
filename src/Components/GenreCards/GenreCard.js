@@ -2,6 +2,7 @@ import React from 'react'
 import './GenreCard.css'
 import { useProductAvailable } from "../../Context/product-context"
 import { useGenre } from '../../Context/genre-context'
+import { FaBookOpen, FaSkull, FaLaptopCode, FaBrain, FaHeart, FaBookReader } from 'react-icons/fa'
 
 function GenreCard({ genretype }) {
 
@@ -91,11 +92,31 @@ function GenreCard({ genretype }) {
     }  
   }
 
+  const getIcon = (type) => {
+    switch(type) {
+      case "Fiction":
+        return <FaBookOpen className="genre-icon" />;
+      case "Thriller":
+        return <FaSkull className="genre-icon" />;
+      case "Tech":
+        return <FaLaptopCode className="genre-icon" />;
+      case "Philosophy":
+        return <FaBrain className="genre-icon" />;
+      case "Romance":
+        return <FaHeart className="genre-icon" />;
+      case "Manga":
+        return <FaBookReader className="genre-icon" />;
+      default:
+        return null;
+    }
+  }
+
   return (
     <div onClick={selectOnlyThatFilter} className='genre-card'>
-        <p>{genretype}</p>
+      {getIcon(genretype)}
+      <p className="genre-text">{genretype}</p>
     </div>
   )
 }
 
-export { GenreCard };
+export { GenreCard }

@@ -70,7 +70,9 @@ function Navbar() {
             <div className="left-topbar-container">
                 {/* <button id="top-bar-ham-menu-btn" className="icon-btn"><i className="fa fa-bars" aria-hidden="true"></i></button> */}
                 <Link to="/">
-                    <h2 className="top-bar-brand-name">Bookztron</h2>
+                    <div className="brand-logo">
+                        <img src="/images/bookzone-logo.png" alt="BookZone" className="logo-image" />
+                    </div>
                 </Link>
                 {
                     location.pathname==="/shop" && 
@@ -100,45 +102,49 @@ function Navbar() {
                 }
                 <Link to="/shop">
                     <button className="icon-btn">
-                        <div>
+                        <div className="icon-with-label">
                             <BsShopWindow/>
+                            <span className="icon-label">Shop</span>
                         </div>
                     </button>
                 </Link>
                 <Link to="/wishlist">
                     <button className="icon-btn">
-                        <div className="icon-count-badge">
+                        <div className="icon-with-label">
                             <i className="fa fa-heart-o fa-x" aria-hidden="true" ></i>
                             {
                                 userWishlist.length!==0
                                 && (<span className="count-badge-x">{userWishlist.length}</span>)
                             }
+                            <span className="icon-label">Wishlist</span>
                         </div>
                     </button>
                 </Link>
                 <Link to="/cart">
                     <button className="icon-btn">
-                        <div className="icon-count-badge">
+                        <div className="icon-with-label">
                             <i className="fa fa-shopping-cart fa-x" aria-hidden="true" ></i>
                             {
                                 userCart.length!==0
                                 && (<span className="count-badge-x">{userCart.length}</span>)
                             }
+                            <span className="icon-label">Cart</span>
                         </div>
                     </button>
                 </Link>
                 <Link to="/orders">
                     <button className="icon-btn">
-                        <div className="icon-count-badge">
-                        <BsFillBagFill 
-                            style={{
-                                marginBottom:"4px"
-                            }}
-                        />
-                        {
-                            userOrders.length!==0
-                            && (<span className="count-badge-x">{userOrders.length}</span>)
-                        }
+                        <div className="icon-with-label">
+                            <BsFillBagFill 
+                                style={{
+                                    marginBottom:"4px"
+                                }}
+                            />
+                            {
+                                userOrders.length!==0
+                                && (<span className="count-badge-x">{userOrders.length}</span>)
+                            }
+                            <span className="icon-label">Orders</span>
                         </div>
                     </button>
                 </Link>

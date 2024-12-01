@@ -1,23 +1,42 @@
 .genre-card
 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px;
     width: 16rem;
     height: 16rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
     background-color: var(--sky-blue);
     /* background-color: burlywood; */
     cursor: pointer;
-    box-shadow: 0 0 1px rgb(48 48 48 / 54%);
-    border-radius: 4px;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.genre-icon {
+    font-size: 40px;
+    color: var(--royal-blue);
+    transition: transform 0.3s ease;
+}
+
+.genre-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
 }
 
 .genre-card:hover 
 {
-    box-shadow: 0 0 25px 6px var(--offline-grey-color);
-    transition: .5s ease-in-out;
-    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.genre-card:hover .genre-icon {
+    transform: scale(1.1);
 }
 
 .genre-card:not(:hover)

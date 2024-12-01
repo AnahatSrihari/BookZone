@@ -29,22 +29,60 @@
     cursor: pointer;
     margin-right: 3rem;
     color: var(--royal-blue);
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.brand-logo {
+    margin-right: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 768px) {
+    .logo-image {
+        height: 30px;
+    }
 }
 
 .search-bar
 {
-    border: 1px solid var(--royal-blue);
+    border: 2px solid var(--royal-blue);
+    border-radius: 25px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-.search-bar:active
+.search-bar:focus-within
 {
-    border: 1px solid var(--royal-blue);
+    border-color: var(--pink-color);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .search-bar-input
 {
     outline: none;
     font-family: inherit;
+    border: none;
+    padding: 8px;
+    width: 300px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.search-bar-input::placeholder
+{
+    color: #999;
 }
 
 #search-bar-btn
@@ -56,19 +94,28 @@
 .top-bar button
 {
     background-color: var(--sky-blue);
+    padding: 15px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .solid-primary-btn.navbar-login-btn
 {
     background-color: var(--pink-color);
     transition: none;
+    border-radius: 50px;
+    font-weight: 600;
 }
 
 .top-bar button:hover
 {
     background: var(--royal-blue)
-                radial-gradient(circle, transparent 1%, 
-                rgb(54, 99, 146) 1%) center/15000%;
+                radial-gradient(circle, transparent 10%, 
+                rgb(0, 0, 0) 1%) center/15000%;
 }
 
 .top-bar button:active 
@@ -76,4 +123,17 @@
     background-color: rgb(54, 99, 146);
     background-size: 100%;
     transition: background 0s;
+}
+
+.icon-with-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon-label {
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 600;
 }

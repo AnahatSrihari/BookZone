@@ -1,30 +1,115 @@
-.footer-container
-{
-    display: grid;
-    width: 100%;
-    min-height: 50vh;
-    margin-top: 7rem;
-    padding: 6rem 10rem;
-    justify-content: center;
-    align-items: flex-start;
-    grid-template-columns: repeat(3, 1fr);
+/* Footer Styles */
+.footer {
+    background: #1a1a1a;
+    padding: 60px 0 0;
     color: white;
-    background-color: var(--dark-grey-2);
 }
 
-.footer-list
-{
-    padding: 0;
+/* Footer Content */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Brand Section */
+.footer-brand {
+    flex: 0 0 25%;
+}
+
+.footer-logo {
+    width: 180px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    margin-top: -10px;
+}
+
+/* Links Section */
+.footer-links {
+    flex: 0 0 70%;
+    display: flex;
+    gap: 80px;
+}
+
+.footer-about,
+.footer-help {
+    flex: 1;
+}
+
+.footer-links h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+}
+
+/* List Styles */
+.footer-links ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer-list p
-{
-    color: var(--dull-grey);
-    cursor: pointer;
+.footer-links li {
+    margin-bottom: 12px;
 }
 
-.footer-list p:hover
-{
+/* Link Styles */
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
     color: white;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #151515;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #888;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .footer-brand {
+        flex: none;
+    }
+
+    .footer-logo {
+        margin: 0 auto;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+    }
 }

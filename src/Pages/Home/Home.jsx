@@ -1,5 +1,5 @@
 import React,{ useEffect } from 'react'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import { useLocation } from "react-router-dom"
 import LibraryIllustration from "../..//Assets/Images/Library_Illustration_1.jpg"
@@ -29,6 +29,7 @@ function Home() {
   } = useGenre()
 
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -69,10 +70,13 @@ function Home() {
 
   return (
     <div className='home-component-container'>
-      <div className='home-page-img-container'>
-        <img className="home-page-background-img" src={LibraryIllustration} alt="Library Illustration"/>
+      <div className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">The more that you read,<br/>the more things you'll know.</h1>
+          <p className="hero-subtitle">- Dr. Seuss</p>
+          <button className="shop-now-btn" onClick={() => navigate('/shop')}>SHOP NOW</button>
+        </div>
       </div>
-
       <h1 className='homepage-headings'>Genres</h1>
       <div className='genre-cards-container'>
           
@@ -113,7 +117,7 @@ function Home() {
         </button>
       </Link>
 
-      <h1 className='homepage-headings'>New Arrivals</h1>
+      <h1 className='homepage-headings'></h1>
       <NewArrivals/>
       <Footer/>
 
